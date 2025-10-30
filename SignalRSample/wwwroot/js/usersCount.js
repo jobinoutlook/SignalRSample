@@ -7,6 +7,12 @@ connectionUserCount.on("updateTotalViews", (value) => {
     newCountSpan.innerText = value.toString();
 });
 
+connectionUserCount.on("updateTotalUsers", (value) => {
+
+    var newCountSpan = document.getElementById("totalUsersCounter");
+    newCountSpan.innerText = value.toString();
+});
+
 function newWindowLoadedOnClient() {
 
     connectionUserCount.send("NewWindowLoaded");
